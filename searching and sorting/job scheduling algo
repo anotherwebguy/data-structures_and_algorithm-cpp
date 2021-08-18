@@ -1,0 +1,28 @@
+struct job{
+    char id;
+    int dead;
+    int profit;
+}
+
+bool compare(const job &a, const job &b){
+    return a.profit>b.profit;
+}
+void jobSequencing(vector<job> &a) {
+    sort(a.begin(),a.end(),compare);
+    int n=a.size();
+    vector<int> slot(n,0);
+    vector<char> result(n);
+    for(int i=0;i<a.size();i++){
+        for(int j=min(n,a[i].dead)-1;j>=0;j--){
+            if(slot[j]==0){
+                slot[j]=1;
+                result[j]=i;
+                break;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(slot[i]) cout<<a[result[i]].id<<" ";
+    }
+    return 0;
+}
