@@ -1,0 +1,23 @@
+
+int minswaps(string s) {
+    vector<int> v;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='[') v.push_back(i);
+    }
+    int ans=0,count=0,id=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='['){
+            count++;
+            id++;
+        } else {
+            count--;
+            if(count<0){
+                ans+= v[id]-i;
+                swap(s[i],s[v[id]]);
+                id++;
+                count=1;
+            }
+        }
+    }
+    return ans;
+}
