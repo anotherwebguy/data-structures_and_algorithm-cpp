@@ -139,7 +139,7 @@ void solve() {
     cin>>s;
     int f=0;
     rep(i,0,s.size()){
-    	if(s[i]=='H' || s[i]=='Q' || s[i]=='9' || s[i]=='+') {
+    	if(s[i]=='H' || s[i]=='Q' || s[i]=='9' ) {
     		cout<<"YES";
     		f=1;
     		break;
