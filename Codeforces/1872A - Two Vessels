@@ -1,0 +1,25 @@
+//Mohit 
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll a,b,c,diff;
+        int k;
+        cin>>a>>b>>c;
+        diff=abs(a-b);
+        if(diff%(2*c) == 0){
+            cout<<(diff/(2*c))<<endl;
+            continue;
+        }
+        cout<<(diff/(2*c))+1<<endl;
+        
+    }
+    
+    return 0;
+}
